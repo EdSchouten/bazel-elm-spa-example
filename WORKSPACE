@@ -10,12 +10,33 @@ http_archive(
     ],
 )
 
+http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = "aed1c249d4ec8f703edddf35cbe9dfaca0b5f5ea6e4cd9e83e99f3b0d1136c3d",
+    strip_prefix = "rules_docker-0.7.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/archive/v0.7.0.tar.gz"],
+)
+
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
     name = "com_github_edschouten_rules_elm",
     commit = "fe553486b0c5792ba4128e7d50e8e249a7f6ca4b",
     remote = "https://github.com/EdSchouten/rules_elm.git",
+)
+
+load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
+
+container_repositories()
+
+load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+
+container_pull(
+    name = "nginx_base",
+    digest = "sha256:98efe605f61725fd817ea69521b0eeb32bef007af0e3d0aeb6258c6e6fe7fc1a",
+    registry = "index.docker.io",
+    repository = "library/nginx",
+    tag = "1.15.9",
 )
 
 load("@com_github_edschouten_rules_elm//elm:deps.bzl", "elm_register_toolchains")

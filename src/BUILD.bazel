@@ -18,6 +18,7 @@ elm_library(
 elm_binary(
     name = "elm_spa_example",
     main = "Main.elm",
+    visibility = ["//visibility:public"],
     deps = [
         ":elm_spa_library",
         "@elm_package_elm_time",

@@ -1,0 +1,23 @@
+load("@io_bazel_rules_docker//container:container.bzl", "container_image", "container_layer")
+
+container_layer(
+    name = "application",
+    directory = "/usr/share/nginx/html",
+    files = ["//src:elm_spa_example"],
+)
+
+container_layer(
+    name = "static_assets",
+    data_path = ".",
+    directory = "/usr/share/nginx/html",
+    files = ["index.html"] + glob(["assets/**"]),
+)
+
+container_image(
+    name = "elm_spa_example_container",
+    base = "@nginx_base//image",
+    layers = [
+        ":application",
+        ":static_assets",
+    ],
+)
