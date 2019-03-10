@@ -12,10 +12,10 @@ on Nginx. This makes it easy to deploy and run this example application.
 
 The advantage of using Bazel to build Elm code is that it makes it
 possible to use a single build system to build, package and run tests
-larger projects in one go. For example, if the Elm web application had
-to communicate with a backend service written in Go, both of these could
-easily be built and packaged into a Docker container through a uniform
-build process.
+for larger projects in one go. For example, if the Elm web application
+had to communicate with a backend service written in Go, both of these
+could easily be built and packaged into a Docker container through a
+uniform build process.
 
 To get more insight in how the Bazel build rules are structured,
 consider [viewing the difference against `master`](https://github.com/EdSchouten/bazel-elm-spa-example/compare/master...EdSchouten:bazel).
