@@ -1,0 +1,25 @@
+load("@com_github_edschouten_rules_elm//elm:def.bzl", "elm_binary", "elm_library")
+
+elm_library(
+    name = "elm_spa_library",
+    srcs = glob(["**/*.elm"]),
+    strip_import_prefix = "src",
+    deps = [
+        "@elm_package_elm_browser",
+        "@elm_package_elm_explorations_markdown",
+        "@elm_package_elm_http",
+        "@elm_package_elm_json",
+        "@elm_package_elm_url",
+        "@elm_package_noredink_elm_json_decode_pipeline",
+        "@elm_package_rtfeldman_elm_iso8601_date_strings",
+    ],
+)
+
+elm_binary(
+    name = "elm_spa_example",
+    main = "Main.elm",
+    deps = [
+        ":elm_spa_library",
+        "@elm_package_elm_time",
+    ],
+)
