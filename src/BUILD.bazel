@@ -9,6 +9,7 @@ elm_library(
         "@elm_package_elm_explorations_markdown",
         "@elm_package_elm_http",
         "@elm_package_elm_json",
+        "@elm_package_elm_time",
         "@elm_package_elm_url",
         "@elm_package_noredink_elm_json_decode_pipeline",
         "@elm_package_rtfeldman_elm_iso8601_date_strings",
@@ -19,8 +20,5 @@ elm_binary(
     name = "elm_spa_example",
     main = "Main.elm",
     visibility = ["//visibility:public"],
-    deps = [
-        ":elm_spa_library",
-        "@elm_package_elm_time",
-    ],
+    deps = [":elm_spa_library"],
 )
