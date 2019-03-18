@@ -4,6 +4,7 @@ elm_library(
     name = "elm_spa_library",
     srcs = glob(["**/*.elm"]),
     strip_import_prefix = "src",
+    visibility = ["//visibility:public"],
     deps = [
         "@elm_package_elm_browser",
         "@elm_package_elm_explorations_markdown",

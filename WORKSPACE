@@ -21,7 +21,7 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
     name = "com_github_edschouten_rules_elm",
-    commit = "fe553486b0c5792ba4128e7d50e8e249a7f6ca4b",
+    commit = "8a89667876a29c6328205a2fce29f9791e180f80",
     remote = "https://github.com/EdSchouten/rules_elm.git",
 )
 
@@ -67,6 +67,13 @@ elm_repository(
 )
 
 elm_repository(
+    name = "elm_package_elm_explorations_test",
+    sha256 = "1233c0cb3d663630b939edb058d904e1275dfae0813ddf0bb63459d0cdf8bfe9",
+    strip_prefix = "test-1.2.1",
+    urls = ["https://github.com/elm-explorations/test/archive/1.2.1.tar.gz"],
+)
+
+elm_repository(
     name = "elm_package_elm_html",
     sha256 = "73b885e0a3d2f9781b1c9bbcc1ee9ac032f503f5ef46a27da3ba617cebbf6fd8",
     strip_prefix = "html-1.0.0",
@@ -92,6 +99,13 @@ elm_repository(
     sha256 = "8c1fd91229a45edddcf981ac2a06d2c9f19a21a07a2ffe37e66a670a06a69f4c",
     strip_prefix = "parser-1.0.0",
     urls = ["https://github.com/elm/parser/archive/1.0.0.tar.gz"],
+)
+
+elm_repository(
+    name = "elm_package_elm_random",
+    sha256 = "b4b9dc99d5a064bc607684dd158199208bce51c0521b7e8a515c365e0a11168d",
+    strip_prefix = "random-1.0.0",
+    urls = ["https://github.com/elm/random/archive/1.0.0.tar.gz"],
 )
 
 elm_repository(

@@ -1,0 +1,10 @@
+load("@com_github_edschouten_rules_elm//elm:def.bzl", "elm_test")
+
+elm_test(
+    name = "RoutingTests",
+    main = "RoutingTests.elm",
+    deps = [
+        "//src:elm_spa_library",
+        "@elm_package_elm_explorations_test",
+    ],
+)
