@@ -18,7 +18,7 @@ elm_library(
 )
 
 elm_binary(
-    name = "elm_spa_example",
+    name = "elm",
     main = "Main.elm",
     visibility = ["//visibility:public"],
     deps = [":elm_spa_library"],

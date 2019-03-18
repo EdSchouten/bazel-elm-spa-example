@@ -3,7 +3,7 @@ load("@io_bazel_rules_docker//container:container.bzl", "container_image", "cont
 container_layer(
     name = "application",
     directory = "/usr/share/nginx/html",
-    files = ["//src:elm_spa_example"],
+    files = ["//src:elm"],
 )
 
 container_layer(
