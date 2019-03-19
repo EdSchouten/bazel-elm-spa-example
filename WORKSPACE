@@ -11,6 +11,12 @@ http_archive(
 )
 
 http_archive(
+    name = "build_bazel_rules_nodejs",
+    sha256 = "02506a501974b6803e9756a4e655f2e1e79d2eafa474154e83b07289f3abab0d",
+    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/0.27.5/rules_nodejs-0.27.5.tar.gz"],
+)
+
+http_archive(
     name = "io_bazel_rules_docker",
     sha256 = "aed1c249d4ec8f703edddf35cbe9dfaca0b5f5ea6e4cd9e83e99f3b0d1136c3d",
     strip_prefix = "rules_docker-0.7.0",
@@ -21,7 +27,7 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
     name = "com_github_edschouten_rules_elm",
-    commit = "8a89667876a29c6328205a2fce29f9791e180f80",
+    commit = "2a5548678b295130e2f6a7ddffb1ed6eede9aa35",
     remote = "https://github.com/EdSchouten/rules_elm.git",
 )
 
@@ -142,3 +148,7 @@ elm_repository(
     strip_prefix = "elm-iso8601-date-strings-1.1.0",
     urls = ["https://github.com/rtfeldman/elm-iso8601-date-strings/archive/1.1.0.tar.gz"],
 )
+
+load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories")
+
+node_repositories()
