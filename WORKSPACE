@@ -17,18 +17,17 @@ http_archive(
 )
 
 http_archive(
+    name = "com_github_edschouten_rules_elm",
+    sha256 = "f6f1bd1b2e03b2d6b59781e48115126ba14fd8792f4c08229f706c13461beae7",
+    strip_prefix = "rules_elm-0.1",
+    urls = ["https://github.com/EdSchouten/rules_elm/archive/v0.1.tar.gz"],
+)
+
+http_archive(
     name = "io_bazel_rules_docker",
     sha256 = "aed1c249d4ec8f703edddf35cbe9dfaca0b5f5ea6e4cd9e83e99f3b0d1136c3d",
     strip_prefix = "rules_docker-0.7.0",
     urls = ["https://github.com/bazelbuild/rules_docker/archive/v0.7.0.tar.gz"],
-)
-
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
-
-git_repository(
-    name = "com_github_edschouten_rules_elm",
-    commit = "2a5548678b295130e2f6a7ddffb1ed6eede9aa35",
-    remote = "https://github.com/EdSchouten/rules_elm.git",
 )
 
 load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
