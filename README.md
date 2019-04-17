@@ -39,6 +39,13 @@ function that allows you to directly push the resulting container image
 into a remote registry. This function doesn't rely on the availability
 of a local Docker daemon.
 
+## Running the unit tests
+
+Just like tests for other languages supported by Bazel, the tests
+provided by this repository may be executed as follows:
+
+    bazel test //...
+
 ## Licensing terms
 
 The changes made to this example web application are available under the
