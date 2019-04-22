@@ -148,11 +148,9 @@ elm_repository(
     urls = ["https://github.com/rtfeldman/elm-iso8601-date-strings/archive/1.1.0.tar.gz"],
 )
 
-load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories")
+load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories", "yarn_install")
 
 node_repositories()
-
-load("@build_bazel_rules_nodejs//:defs.bzl", "yarn_install")
 
 yarn_install(
     name = "npm",
