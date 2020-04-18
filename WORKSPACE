@@ -1,4 +1,5 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 http_archive(
     name = "bazel_toolchains",
@@ -16,11 +17,10 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/0.27.7/rules_nodejs-0.27.7.tar.gz"],
 )
 
-http_archive(
+git_repository(
     name = "com_github_edschouten_rules_elm",
-    sha256 = "0b8a4e288ce9fe255074adb07be443cdda3a9fa9667de775b01decb93507a6d7",
-    strip_prefix = "rules_elm-0.3",
-    urls = ["https://github.com/EdSchouten/rules_elm/archive/v0.3.tar.gz"],
+    commit = "6548399afde6690dc72f7cabdd29e7381c9ec508",
+    remote = "https://github.com/EdSchouten/rules_elm.git"
 )
 
 http_archive(
@@ -59,9 +59,9 @@ elm_repository(
 
 elm_repository(
     name = "elm_package_elm_core",
-    sha256 = "9cfa20b6468b8bfb4f02c6652f43de1dd1c58b328060830ab804964da0417982",
-    strip_prefix = "core-1.0.0",
-    urls = ["https://github.com/elm/core/archive/1.0.0.tar.gz"],
+    sha256 = "1ba2e027ab58f0ed41eea196fc4b016d6f5005926a9eecb1a3dffb4b2e213522",
+    strip_prefix = "core-1.0.5",
+    urls = ["https://github.com/elm/core/archive/1.0.5.zip"]
 )
 
 elm_repository(
@@ -129,9 +129,9 @@ elm_repository(
 
 elm_repository(
     name = "elm_package_elm_virtual_dom",
-    sha256 = "5899564798629e91ef95238f8ba7f4d40260d18496b622469d69fc03457aa842",
-    strip_prefix = "virtual-dom-1.0.0",
-    urls = ["https://github.com/elm/virtual-dom/archive/1.0.0.tar.gz"],
+    sha256 = "0158b7a6923b2692e6aa77600b45c80aaf1573f0a11aee24a36f7d30d6549186",
+    strip_prefix = "virtual-dom-1.0.2",
+    urls = ["https://github.com/elm/virtual-dom/archive/1.0.2.zip"]
 )
 
 elm_repository(
