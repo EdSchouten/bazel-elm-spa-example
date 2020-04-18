@@ -1,4 +1,5 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 http_archive(
     name = "bazel_toolchains",
@@ -16,11 +17,10 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/0.27.7/rules_nodejs-0.27.7.tar.gz"],
 )
 
-http_archive(
+git_repository(
     name = "com_github_edschouten_rules_elm",
-    sha256 = "0b8a4e288ce9fe255074adb07be443cdda3a9fa9667de775b01decb93507a6d7",
-    strip_prefix = "rules_elm-0.3",
-    urls = ["https://github.com/EdSchouten/rules_elm/archive/v0.3.tar.gz"],
+    commit = "6548399afde6690dc72f7cabdd29e7381c9ec508",
+    remote = "https://github.com/EdSchouten/rules_elm.git"
 )
 
 http_archive(
