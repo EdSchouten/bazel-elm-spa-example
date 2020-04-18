@@ -59,9 +59,9 @@ elm_repository(
 
 elm_repository(
     name = "elm_package_elm_core",
-    sha256 = "9cfa20b6468b8bfb4f02c6652f43de1dd1c58b328060830ab804964da0417982",
-    strip_prefix = "core-1.0.0",
-    urls = ["https://github.com/elm/core/archive/1.0.0.tar.gz"],
+    sha256 = "1ba2e027ab58f0ed41eea196fc4b016d6f5005926a9eecb1a3dffb4b2e213522",
+    strip_prefix = "core-1.0.5",
+    urls = ["https://github.com/elm/core/archive/1.0.5.zip"]
 )
 
 elm_repository(
