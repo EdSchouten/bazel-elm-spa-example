@@ -129,9 +129,9 @@ elm_repository(
 
 elm_repository(
     name = "elm_package_elm_virtual_dom",
-    sha256 = "5899564798629e91ef95238f8ba7f4d40260d18496b622469d69fc03457aa842",
-    strip_prefix = "virtual-dom-1.0.0",
-    urls = ["https://github.com/elm/virtual-dom/archive/1.0.0.tar.gz"],
+    sha256 = "0158b7a6923b2692e6aa77600b45c80aaf1573f0a11aee24a36f7d30d6549186",
+    strip_prefix = "virtual-dom-1.0.2",
+    urls = ["https://github.com/elm/virtual-dom/archive/1.0.2.zip"]
 )
 
 elm_repository(
